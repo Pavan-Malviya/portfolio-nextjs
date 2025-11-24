@@ -7,15 +7,7 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { MagneticButton } from "@/components/magnetic-button";
 import Link from "next/link";
-
-const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Blog", href: "/blog" }, // Added blog link to navigation
-  { name: "Contact", href: "#contact" },
-];
+import { navigationItems } from "@/lib/portfolioData";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,7 +56,7 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
+            {navigationItems.map((item, index) => (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: -20 }}
@@ -179,7 +171,7 @@ export function Navigation() {
               className="md:hidden border-t border-border bg-background/95 backdrop-blur-md"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {navItems.map((item, index) => (
+                {navigationItems.map((item, index) => (
                   <motion.div
                     key={item.name}
                     initial={{ opacity: 0, x: -20 }}
